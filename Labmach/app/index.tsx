@@ -1,5 +1,6 @@
 import React from 'react';
-import {ImageBackground, TouchableOpacity, StyleSheet, Text, View} from 'react-native';
+import {ImageBackground, TouchableOpacity, Pressable, StyleSheet, Text, View} from 'react-native';
+import { Link } from 'expo-router';
 
 export default function HomeScreen() {
     return (
@@ -13,10 +14,11 @@ export default function HomeScreen() {
                 techniques of different 
                 fields of science.
             </Text>
-            <TouchableOpacity
-                style={styles.homebutton}>
-                <Text style={{color: "black", fontSize: 20, textAlign: "center"}}>Let{'\''}s Start</Text>
-            </TouchableOpacity>
+            <Link href="/login" asChild>
+                <Pressable style={styles.homebutton}>
+                    <Text style={{color: "black", fontSize: 20, textAlign: "center"}}>Let{'\''}s Start</Text>
+                </Pressable>
+            </Link>
         </ImageBackground>
     </View>
     );
