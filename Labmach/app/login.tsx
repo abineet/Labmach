@@ -1,5 +1,6 @@
 import React,{useEffect} from 'react';
-import { TextInput, TouchableOpacity, ImageBackground, StyleSheet, Text, View, KeyboardAvoidingView} from 'react-native';
+import { TextInput, Pressable, ImageBackground, StyleSheet, Text, View, KeyboardAvoidingView} from 'react-native';
+import { Link } from 'expo-router';
 
 const LoginScreen = () => {
 
@@ -34,18 +35,20 @@ const LoginScreen = () => {
                     />
                 </View>
                 <View style={{justifyContent:'flex-start', flex: 4}}>
-                    <TouchableOpacity
-                        style={styles.loginbutton}>
-                        <Text style={styles.logintextbutton}>Login</Text>
-                    </TouchableOpacity>
+                    <Link href='/dashboard' asChild>
+                        <Pressable style={styles.loginbutton}>
+                            <Text style={styles.logintextbutton}>Login</Text>
+                        </Pressable>
+                    </Link>
                     <Text style={{color: 'red', fontSize: 10, textAlign: 'center'}}>{error}</Text>
                 </View>
                 <View style={{justifyContent:'space-evenly', flex: 3}}>
                     <Text style={styles.logintextbody}>New to LaBmAcH?</Text>
-                    <TouchableOpacity
-                        style={styles.loginbutton}>
-                        <Text style={styles.logintextbutton}>Register</Text>
-                    </TouchableOpacity>
+                    <Link href='/' asChild>
+                        <Pressable style={styles.loginbutton}>
+                            <Text style={styles.logintextbutton}>Register</Text>
+                        </Pressable>
+                    </Link>
                 </View>
             </ImageBackground>
         </KeyboardAvoidingView>
