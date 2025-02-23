@@ -44,7 +44,7 @@ const LoginScreen = () => {
                 </View>
                 <View style={{justifyContent:'space-evenly', flex: 3}}>
                     <Text style={styles.logintextbody}>New to LaBmAcH?</Text>
-                    <Link href='/' asChild>
+                    <Link href='/register' asChild>
                         <Pressable style={styles.loginbutton}>
                             <Text style={styles.logintextbutton}>Register</Text>
                         </Pressable>
