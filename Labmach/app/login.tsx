@@ -2,6 +2,8 @@ import React,{useEffect} from 'react';
 import { TextInput, Pressable, ImageBackground, StyleSheet, Text, View, KeyboardAvoidingView} from 'react-native';
 import { Link } from 'expo-router';
 
+import { auth } from 'C:/Users/parichha/Softwares/Labmach/Labmach/firebase';
+
 const LoginScreen = () => {
 
     const [email, onChangeEmail] = React.useState('');
@@ -35,11 +37,15 @@ const LoginScreen = () => {
                     />
                 </View>
                 <View style={{justifyContent:'flex-start', flex: 4}}>
-                    <Link href='/dashboard' asChild>
-                        <Pressable style={styles.loginbutton}>
-                            <Text style={styles.logintextbutton}>Login</Text>
-                        </Pressable>
-                    </Link>
+                    <Pressable style={styles.loginbutton}
+                        onPress={()=>{auth.signInWithEmailAndPassword(email, password)
+                                .catch((err) => {
+                                    onChangeError(err.message);
+                                  })
+                            }
+                        }>
+                        <Text style={styles.logintextbutton}>Login</Text>
+                    </Pressable>
                     <Text style={{color: 'red', fontSize: 10, textAlign: 'center'}}>{error}</Text>
                 </View>
                 <View style={{justifyContent:'space-evenly', flex: 3}}>

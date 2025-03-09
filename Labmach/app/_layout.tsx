@@ -9,10 +9,10 @@ export default function RootLayout() {
         headerTintColor: '#fff',
         headerTitleStyle: styles.headertext,
       }}>
-      <Stack.Screen name="index" />
-      <Stack.Screen name="login" />
-      <Stack.Screen name="register" />
-      <Stack.Screen name="dashboard" />
+      <Stack.Screen name="index" options={{ headerShown: false }}/>
+      <Stack.Screen name="login" options={{ headerShown: false }}/>
+      <Stack.Screen name="register" options={{ headerShown: false }}/>
+      <Stack.Screen name="dashboard" options={{ headerShown: false }}/>
     </Stack>
   );
 }
